@@ -88,20 +88,7 @@ def main():
         "messages": [{"role": "user", "content": "计算 (100 + 50) × 2 - 30 等于多少？请一步步来。"}]
     })
 
-    # Agent 返回的消息列表中，最后一条就是最终回答
-    for i, msg in enumerate(result["messages"]):
-        role = msg.__class__.__name__ if hasattr(msg, '__class__') else msg.get("role", "unknown")
-        # 只打印 AI 的消息和工具调用的消息
-        if hasattr(msg, 'content') and msg.content:
-            content_preview = str(msg.content)[:200]
-            print(f"[{role}] {content_preview}")
-        if hasattr(msg, 'tool_calls') and msg.tool_calls:
-            for tc in msg.tool_calls:
-                print(f"[TOOL_CALL] {tc['name']}({tc['args']})")
 
-    print()
-    print(">>> 看到了吗？Agent 自动调用了 3 次工具，最后汇总出结果")
-    print(">>> 你不需要手动执行任何工具，Agent 全自动完成")
 
     # ============================================================
     # 场景2：需要外部知识的问题
@@ -114,17 +101,6 @@ def main():
     result2 = agent.invoke({
         "messages": [{"role": "user", "content": "北京和上海的温度差是多少度？"}]
     })
-
-    for msg in result2["messages"]:
-        if hasattr(msg, 'content') and msg.content:
-            content_preview = str(msg.content)[:200]
-            print(f"[{msg.__class__.__name__}] {content_preview}")
-        if hasattr(msg, 'tool_calls') and msg.tool_calls:
-            for tc in msg.tool_calls:
-                print(f"[TOOL_CALL] {tc['name']}({tc['args']})")
-
-    print()
-    print(">>> Agent 自动：查北京天气 → 查上海天气 → 计算温差 → 回答")
 
 
 if __name__ == "__main__":
