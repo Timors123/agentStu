@@ -100,7 +100,6 @@ Desktop.ini
 
 # Coverage / profiling
 .cache/
-coverage.xml
 *.prof
 
 # Misc
