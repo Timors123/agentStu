@@ -26,7 +26,7 @@ Agent 循环示意图：
 
 from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
-from langgraph.prebuilt import create_react_agent
+from langchain.agents import create_agent
 
 
 # ============================================================
@@ -71,11 +71,11 @@ def main():
     )
 
     # ============================================================
-    # 核心：create_react_agent —— 一行代码创建 Agent
+    # 核心：create_agent —— 一行代码创建 Agent
     # ============================================================
     # ReAct = Reasoning + Acting（推理 + 行动）
     # Agent 自动完成：决策 → 执行工具 → 观察结果 → 继续决策 → ... → 最终回答
-    agent = create_react_agent(model=llm, tools=[add, multiply, subtract, get_current_weather])
+    agent = create_agent(model=llm, tools=[add, multiply, subtract, get_current_weather])
 
     # ============================================================
     # 场景1：多步骤数学题 —— Agent 需要多次调用工具
