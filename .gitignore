@@ -1,0 +1,114 @@
+# .gitignore - 忽略常见的与代码无关的文件和目录
+# 适用于 Python 项目，包含虚拟环境、编译产物、IDE/OS 临时文件等
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+share/python-wheels/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Translations
+*.mo
+*.pot
+
+# IDEs / editors
+.vscode/
+.idea/
+*.iml
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sdf
+.vs/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Jupyter
+.ipynb_checkpoints
+
+# Logs and runtime
+*.log
+*.csv
+*.sqlite3
+*.db
+*.pid
+*.seed
+*.pid.lock
+
+# Environment / secrets
+.env
+.env.*
+.envrc
+.python-version
+
+# Coverage / profiling
+.cache/
+coverage.xml
+*.prof
+
+# Misc
+*.bak
+*.tmp
+*.swp
+*~
+
+# 项目中可能存在的本地 lock 文件（如 uv.lock），如果不希望提交可以保留这一行
+uv.lock
+
